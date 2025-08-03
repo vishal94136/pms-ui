@@ -24,14 +24,10 @@ const AnnualAssessment = () => {
     setSelectedItem(item);
     setNewRating(item.rating);
   };
-
-  const handleViewClick = (item) => {
-    alert(`Viewing details for ${item.resourceName}`); 
-  };
-
+  
   const handleSubmitRating = () => {
-    if (newRating < 1 || newRating > 4) {
-      alert('Rating must be between 1 and 4');
+    if (newRating < 1 || newRating > 4) { 
+      alert('Rating must be between 1 and 4'); 
       return;
     }
     const updatedData = {
@@ -45,14 +41,6 @@ const AnnualAssessment = () => {
     };
     dispatch(updateAssessment(selectedItem.id, updatedData));
     setSelectedItem(null);
-  };
-
-  const getAction = (rating, assessmentStatus) => {
-    return (rating === 0 || assessmentStatus === 'InProgress') ? 'Rate Goals' : 'View';
-  };
-
-  const getActionClass = (rating, assessmentStatus) => {
-    return (rating === 0 || assessmentStatus === 'InProgress') ? 'rate' : 'view';
   };
 
   return (
@@ -91,14 +79,10 @@ const AnnualAssessment = () => {
                 <td>{renderStars(item.rating)}</td>
                 <td>
                   <button
-                    className={`action-btn ${getActionClass(item.rating, item.assessmentStatus)}`}
-                    onClick={() => 
-                      (item.rating === 0 || item.assessmentStatus === 'InProgress') 
-                        ? handleRateClick(item) 
-                        : handleViewClick(item)
-                    }
+                    className="action-btn rate"
+                    onClick={() => handleRateClick(item)}
                   >
-                    {getAction(item.rating, item.assessmentStatus)}
+                    Rate Goals
                   </button>
                 </td>
               </tr>

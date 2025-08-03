@@ -1,7 +1,10 @@
 const initialState = {
   annualAssessment: [],
   subordinates: [],
-  goals: [], 
+  goals: [],
+  managerGoals: [],
+  myAssessment: [],
+  myGoals: { goals: [], overallGoalStatus: '' },
 };
 
 const performanceReducer = (state = initialState, action) => {
@@ -20,6 +23,26 @@ const performanceReducer = (state = initialState, action) => {
       return {
         ...state,
         goals: action.payload,
+      };
+    case 'FETCH_MANAGER_GOALS_SUCCESS':
+      return {
+        ...state,
+        managerGoals: action.payload,
+      };
+    case 'FETCH_MY_ASSESSMENT_SUCCESS':
+      return {
+        ...state,
+        myAssessment: action.payload,
+      };
+    case 'FETCH_MY_GOALS_SUCCESS':
+      return {
+        ...state,
+        myGoals: action.payload,
+      };
+    case 'UPDATE_MY_GOAL_STATUS_SUCCESS':
+      return {
+        ...state,
+        myGoals: { ...state.myGoals, overallGoalStatus: action.payload },
       };
     default:
       return state;

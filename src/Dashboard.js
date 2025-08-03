@@ -1,13 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
+import DashboardContent from './components/DashboardContent/DashboardContent';
 import { logout } from './redux/actions/authActions';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(logout());
@@ -29,6 +31,7 @@ const Dashboard = () => {
         <Sidebar />
         <main className="dashboard-main">
           <Outlet />
+          {!location.pathname.includes('/team/') && !location.pathname.includes('/my-performance') && <DashboardContent />}
         </main>
       </div>
     </div>

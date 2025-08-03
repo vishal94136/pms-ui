@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Dashboard from './Dashboard.js';
 import GoalSetting from './components/GoalSetting/GoalSetting.js';
 import AnnualAssessment from './components/AnnualAssessment/AnnualAssessment';
+import MyPerformance from './components/MyPerformance/MyPerformance.js';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -26,6 +27,7 @@ function App() {
         >
           <Route path="team/annual-assessment" element={<AnnualAssessment />} />
           <Route path="team/goals-setting" element={<GoalSetting />} />
+          <Route path="my-performance" element={<MyPerformance />} />
         </Route>
       </Routes>
     </Router>
