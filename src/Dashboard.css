@@ -1,0 +1,142 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.logo-per {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.logo-global {
+  font-weight: bold;
+  color: #212529;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.title {
+  color: #6c757d;
+  font-size: 16px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-left: 10px;
+}
+
+.notification {
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  color: #ffc107;
+  flex-shrink: 0;
+}
+
+.notification::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  width: 6px;
+  height: 6px;
+  background-color: #dc3545;
+  border-radius: 50%;
+}
+
+.user-info {
+  color: #fd7e14;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.header-right button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.header-right button:hover {
+  background-color: #0056b3;
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 20px;
+  color: #212529;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+}
+
+.dashboard-main h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .header-left {
+    gap: 3px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 5px;
+  }
+
+  .user-info {
+    max-width: 100px;
+  }
+}

@@ -1,0 +1,110 @@
+.annual-assessment {
+  padding: 20px;
+}
+
+.assessment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-table th {
+  background-color: #6f42c1; /* Purple header */
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.assessment-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #ced4da; /* Gray placeholder */
+  border-radius: 50%;
+}
+
+.goals-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.goals-status.inprogress {
+  background-color: #fd7e14; /* Orange */
+}
+
+.goals-status.completed {
+  background-color: #198754; /* Green */
+}
+
+.ratings-stars {
+  color: #fd7e14; /* Orange stars */
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.action-btn.rate {
+  background-color: #6f42c1; /* Purple */
+  color: white;
+}
+
+.action-btn.view {
+  background-color: #fff;
+  color: #6f42c1;
+  border: 1px solid #6f42c1;
+}
+
+/* Existing styles remain the same */
+
+/* New: Modal styles */
+.rating-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100px;
+}
+
+.modal-content button {
+  margin: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
